@@ -1,0 +1,14 @@
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+intro:
+  aka: Also known as
+  desc: A fan-made tool to search through Sandwiches of History recipes
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  whats-your-name: What's your name?
+not-found: Not found

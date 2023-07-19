@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path fill="#FF8000" d="M0 0h120v120H0z"></path>
+  <path d="m20 80 40 20V60L20 40Z" fill="none" id="darkSide"></path>
+  <path d="M60,60 v40 l40,-20 v-40Z" fill="none" id="lightSide"></path>
+  <path d="M60 60 20 40h80" fill="none" id="topSide"></path>
+  <path stroke="none" d="M60 39v11m0-27v4" id="toothpick">
+    
+  </path>
+  <circle cx="60" cy="33" r="6" fill="none" id="olive">
+    
+  </circle>
+  <circle cx="62" cy="32" r="2" fill="none"  id="paprika">
+    
+  </circle>
+  
+</svg>
