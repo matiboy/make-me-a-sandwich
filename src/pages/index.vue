@@ -3,10 +3,26 @@ defineOptions({
   name: 'IndexPage',
 })
 let ingredientNameSample = $ref('')
-const ingredientNameSamples = ['tuna', 'salami', 'cheese', 'ham', 'egg', 'tomato', 'lettuce', 'cucumber', 'onion', 'mayonnaise', 'mustard', 'ketchup', 'peanut butter', 'jam', 'honey', 'chocolate spread', 'chicken', 'bacon', 'turkey', 'beef', 'pork', 'sausage', 'pepperoni', 'salmon', 'tuna', 'anchovy', 'sardine', 'mackerel', 'herring', 'trout', 'cod', 'haddock', 'prawn', 'shrimp', 'lobster', 'crab', 'mushroom', 'avocado', 'olive', 'pepper']
-const { pause, resume, isActive } = useIntervalFn(() => {
-  ingredientNameSample = ingredientNameSamples[Math.floor(Math.random() * ingredientNameSamples.length)]
-}, 3e3)
+
+const ingredientNameSamples = ['tuna', 'salami', 'cheese', 'ham', 'egg', 'tomato', 'lettuce', 'cucumber', 'onion', 'mayonnaise', 'mustard', 'ketchup', 'peanut butter', 'jam', 'honey', 'chicken', 'bacon', 'turkey', 'beef', 'pork', 'sausage', 'pepperoni', 'salmon', 'tuna', 'anchovy', 'sardine', 'mackerel', 'herring', 'trout', 'cod', 'haddock', 'prawn', 'shrimp', 'lobster', 'crab', 'mushroom', 'avocado', 'olive', 'pepper']
+function getRandomIngredient() {
+  writeWords(ingredientNameSamples[Math.floor(Math.random() * ingredientNameSamples.length)])
+}
+setTimeout(getRandomIngredient, 300)
+const { pause, resume, isActive } = useIntervalFn(getRandomIngredient, 3e3)
+
+function writeWords(word) {
+  ingredientNameSample = ''
+  const parts = word.split('')
+  const i = setInterval(() => {
+    if (parts.length === 0) {
+      clearInterval(i)
+      return
+    }
+    ingredientNameSample += parts.shift()
+  }, 600 / parts.length)
+}
+
 const user = useUserStore()
 const name = ref(user.savedName)
 
@@ -18,13 +34,13 @@ const ingredientName = $ref('')
 
 <template>
   <div>
-    <div w-full bg-red text-4xl flex="~">
+    <div w-full bg="red dark:#2e0505" text-4xl flex="~">
       <div w="1/2">
         <embed src="blank_sandwich.svg" w="full">
       </div>
       <div w="1/2" flex="~ col justify-center items-center" my-auto>
         <div h="1/2" flex="~ col justify-end items-center" gap="3">
-          <div text="white 3xl">
+          <div text="white dark:gray-400 3xl">
             What ingredient is in your kitchen?
           </div>
           <input
@@ -34,7 +50,7 @@ const ingredientName = $ref('')
             p="x-4 y-2"
             w="90% md:80% lg:70% xl:60%"
             text="center"
-            bg="red-300"
+            bg="red-300 dark:red-800"
             border="~ rounded gray-200 dark:gray-700"
             outline="none active:none"
             :placeholder="ingredientNameSample"
