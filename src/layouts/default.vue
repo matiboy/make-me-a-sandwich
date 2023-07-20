@@ -3,7 +3,7 @@
     <MassLogo h="90%" shadow="~ orange-700 lg" />
   </nav>
   <main
-    mx-auto text="center gray-700 dark:gray-200" w="full lg:1000px xl:1200px" bg="gray-300 dark:#130b00"
+    mx-auto h="lg:700px xl:820px" text="center gray-700 dark:gray-200" w="full lg:1000px xl:1200px" bg="gray-300 dark:#130b00"
   >
     <RouterView />
     <TheFooter />

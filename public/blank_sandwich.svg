@@ -1,16 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+     <!-- Circular path with a radius of 40 -->
+     <path id="vshape" d="M30,42 58,56 M62,56 90,42" />
+   </defs>
+<style>
+  text {
+    font-family: sans-serif;
+    font-size: 6px;
+    text-anchor: middle;
+  }
+</style>
   <path fill="#FF8000" d="M0 0h120v120H0z"></path>
-  <path d="m20 80 40 20V60L20 40Z" fill="none" id="darkSide"></path>
-  <path d="M60,60 v40 l40,-20 v-40Z" fill="none" id="lightSide"></path>
-  <path d="M60 60 20 40h80" fill="none" id="topSide"></path>
-  <path stroke="none" d="M60 39v11m0-27v4" id="toothpick">
-    
-  </path>
-  <circle cx="60" cy="33" r="6" fill="none" id="olive">
-    
+  <path opacity="0" d="m20 80 40 20V60L20 40Z" fill="#6A462F" id="darkSide"></path>
+  <path opacity="0" d="M60,60 v40 l40,-20 v-40Z" fill="#C4A484" id="lightSide"></path>
+  <path opacity="0" d="M60 60 20 40h80" fill="#D7BF82" id="topSide"></path>
+
+  <g id="olivePick" opacity="0">
+    <path stroke="black" d="M60 39v11m0-27v4" id="toothpick"></path>
+    <circle cx="60" cy="33" r="6" fill="#8CC63F" id="olive"></circle>
+    <circle cx="62" cy="32" r="2" fill="red"  id="paprika">
   </circle>
-  <circle cx="62" cy="32" r="2" fill="none"  id="paprika">
-    
-  </circle>
-  
+  </g>
+
+  <g transform="rotate(26 40 73)">
+  <text x="40" fill="#aeaeae"  y="73" class="center" text-anchor="middle" id="step1Text"></text>
+  </g>
+  <g transform="rotate(-26 80 73)">
+  <text x="80" y="73" fill="#6A462F"   id="step2Text" text-anchor="middle"></text>
+  </g>
+  <text fill="#6A462F"><textPath id="step3Text" xlink:href="#vshape" startOffset="50%" text-anchor="middle"></textPath></text>
+  <text x="60" y="20"  id="step4Text" fill="#3b1e0d"></text>
 </svg>
