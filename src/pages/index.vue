@@ -159,6 +159,17 @@ watch(() => selectedIngredients.length + (!!oneRecipe).toString(), (v) => {
 function selectRecipe(r: Recipe | null) {
   oneRecipe = r
 }
+const randomRecipes = $computed(() => {
+  if (availableRecipes.length < 9)
+    return availableRecipes
+  const recipes = [...availableRecipes]
+  const randomRecipes: Recipe[] = []
+  for (let i = 0; i < 9; i++) {
+    const r = recipes.splice(Math.floor(Math.random() * recipes.length), 1)[0]
+    randomRecipes.push(r)
+  }
+  return randomRecipes
+})
 </script>
 
 <template>
@@ -188,6 +199,9 @@ function selectRecipe(r: Recipe | null) {
             Watch it <a :href="oneRecipe?.video_url">on
               <img src="/youtube.png" alt="YouTube" ml-3 class="inline h-[30px]">
             </a>
+          </p>
+          <p v-if="oneRecipe?.bread_type" my-3>
+            Bread: {{ oneRecipe?.bread_type }}
           </p>
           <p my-3>
             Ingredients:
@@ -231,8 +245,8 @@ function selectRecipe(r: Recipe | null) {
           </p>
         </div>
         <div w="full" text="left" h="1/8" p="t-4">
-          <span v-for="ingredient, i in availableIngredients" :key="i" inline cursor="pointer" underline m="r-1" @click="selectIngredient(ingredient)">
-            {{ ingredient.object_name }}<span v-if="i < availableIngredients.length - 1">,</span>
+          <span v-for="ingredient, i in availableIngredients" :key="i" inline cursor="pointer" underline m="r-2" @click="selectIngredient(ingredient)">
+            {{ ingredient.object_name }}<span v-if="i < availableIngredients.length - 1">&nbsp;,</span>
           </span>
         </div>
         <div w="full" text="base white" h="37.5%" p="t-4" :hidden="availableRecipes.length > 0 || !selectedIngredients.length" @click="selectedIngredients = []">
@@ -243,7 +257,7 @@ function selectRecipe(r: Recipe | null) {
             You may be looking for:
           </div>
           <div grid="~ cols-3 gap-3" text="white dark:gray-400 center">
-            <div v-for="recipe, i in availableRecipes" :key="i" cursor="pointer" underline m="r-1" @click="selectRecipe(recipe)">
+            <div v-for="recipe, i in randomRecipes" :key="i" cursor="pointer" underline m="r-1" @click="selectRecipe(recipe)">
               {{ recipe.object_name }}
             </div>
           </div>

@@ -1,5 +1,132 @@
 [
   {
+    "id": 12,
+    "object_name": "Croque Monsieur (1910)",
+    "publish_date": "2022-07-27",
+    "source": 1,
+    "ingredients": [
+      {"id": 23},
+      {"id": 36, "specific": "Dijon mustard"},
+      {"id": 70},
+      {"id": 69},
+      {"id": 40},
+      {"id": 71}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=yZ0bPr7m2oQ",
+    "score": 9,
+    "plus_up_score": 10,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 51, "specific": "Tabasco"}
+    ]
+  },
+  {
+    "id": 11,
+    "object_name": "Chicken Katsu Sandwich (1922)",
+    "publish_date": "2023-06-05",
+    "source": 1,
+    "ingredients": [
+      {"id": 50},
+      {"id": 64},
+      {"id": 65, "specific": "panko"},
+      {"id": 66},
+      {"id": 67},
+      {"id": 17, "specific": "Kewpie"},
+      {"id": 21},
+      {"id": 68},
+      {"id": 10},
+      {"id": 47},
+      {"id": 48}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=z7gez1Dxxzk",
+    "score": 6,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 10,
+    "object_name": "Club House Sandwich (1922)",
+    "publish_date": "2023-04-28",
+    "source": 1,
+    "ingredients": [
+      {"id": 50},
+      {"id": 16},
+      {"id": 4},
+      {"id": 47},
+      {"id": 40}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=uxSJ8rhoRVo",
+    "score": 6,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 9,
+    "object_name": "Shrimp Sandwich",
+    "publish_date": "2022-08-29",
+    "source": 1,
+    "ingredients": [
+      {"id": 28},
+      {"id": 22},
+      {"id": 62, "specific": "lemon juice"},
+      {"id": 47},
+      {"id": 48}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=MQWNPkIhPdY",
+    "score": 6,
+    "plus_up_score": 8,
+    "bread_type": "brown",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 8,
+    "object_name": "Cheese and Anchovy Sandwich",
+    "publish_date": "2022-08-29",
+    "source": 1,
+    "ingredients": [
+      {"id": 58, "specific": "anchovy filet"},
+      {"id": 61},
+      {"id": 10},
+      {"id": 26},
+      {"id": 47},
+      {"id": 48}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=aJSXhWOGEPo",
+    "score": 6,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 7,
+    "object_name": "Salmon Cheese Bun",
+    "publish_date": "2023-05-23",
+    "source": 1,
+    "ingredients": [
+      {"id": 15, "specific": "flaked canned"},
+      {"id": 8},
+      {"id": 55, "specific": "stuffed"},
+      {"id": 54, "specific": "green"},
+      {"id": 56},
+      {"id": 57},
+      {"id": 3},
+      {"id": 17}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=ySncRv04DXw",
+    "score": 5.5,
+    "plus_up_score": 6.5,
+    "bread_type": "hamburger bun",
+    "plus_up_ingredients": [
+      {"id": 51, "specific": "Old Bay"}
+    ]
+  },
+  {
     "id": 1,
     "object_name": "Bacon, Egg and Banana Sandwich",
     "publish_date": "2023-06-07",
@@ -71,6 +198,46 @@
     "plus_up_score": 10,
     "bread_type": "white",
     "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 6,
+    "object_name": "Shrimp Sandwich (1957)",
+    "publish_date": "2023-06-30",
+    "video_url": "https://www.youtube.com/watch?v=Z1wwDt1Qj6w",
+    "source": 1,
+    "ingredients": [
+      {"id": 28},
+      {"id": 52},
+      {"id": 17},
+      {"id": 40},
+      {"id": 47},
+      {"id": 21},
+      {"id": 48}
+    ],
+    "score": 8.5,
+    "plus_up_score": 8.5,
+    "bread_type": "wholewheat",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 5,
+    "object_name": "Chicken and Dill Pickle Sandwich (1939)",
+    "publish_date": "2023-07-20",
+    "video_url": "https://www.youtube.com/watch?v=pliA3pzAHs8",
+    "source": 1,
+    "ingredients": [
+      {"id": 50},
+      {"id": 49},
+      {"id": 40}
+    ],
+    "score": 6.5,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 51, "specific": "Frank's Red Hot"},
+      {"id": 21}
     ]
   }
 ]
