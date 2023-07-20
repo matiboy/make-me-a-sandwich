@@ -250,7 +250,7 @@ const randomRecipes = $computed(() => {
           </span>
         </div>
         <div w="full" text="base white" h="37.5%" p="t-4" :hidden="availableRecipes.length > 0 || !selectedIngredients.length" @click="selectedIngredients = []">
-          Looks like we can't find a recipe for those ingredients.<br>Click to clear them and try again.
+          Looks like we can't find a recipe for those ingredients.<br><span cursor-pointer underline>Clear them and try again</span>.
         </div>
         <div w="full" text="base white" h="37.5%" p="t-4" :hidden="!availableRecipes.length">
           <div text="lg">
