@@ -1,15 +1,35 @@
 <script setup lang="ts">
+import ingredientsList from '~/assets/database/ingredients.json'
+
 defineOptions({
   name: 'IndexPage',
 })
+
 let ingredientNameSample = $ref('')
 
-const ingredientNameSamples = ['tuna', 'salami', 'cheese', 'ham', 'egg', 'tomato', 'lettuce', 'cucumber', 'onion', 'mayonnaise', 'mustard', 'ketchup', 'peanut butter', 'jam', 'honey', 'chicken', 'bacon', 'turkey', 'beef', 'pork', 'sausage', 'pepperoni', 'salmon', 'tuna', 'anchovy', 'sardine', 'mackerel', 'herring', 'trout', 'cod', 'haddock', 'prawn', 'shrimp', 'lobster', 'crab', 'mushroom', 'avocado', 'olive', 'pepper']
+const ingredientNameSamples: string[] = ingredientsList.reduce((acc, i) => i.object_name.length < 10 ? [...acc, i.object_name] : acc, [])
+const ingredientNameSamplesCopy = [...ingredientNameSamples]
 function getRandomIngredient() {
-  writeWords(ingredientNameSamples[Math.floor(Math.random() * ingredientNameSamples.length)])
+  if (!ingredientNameSamplesCopy.length)
+    ingredientNameSamplesCopy.push(...ingredientNameSamples)
+  const i = Math.floor(Math.random() * ingredientNameSamplesCopy.length)
+  writeWords(ingredientNameSamplesCopy.splice(i, 1)[0])
 }
 setTimeout(getRandomIngredient, 300)
 const { pause, resume, isActive } = useIntervalFn(getRandomIngredient, 3e3)
+
+const ingredientNameInput = $ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  ingredientNameInput?.addEventListener('focus', () => {
+    ingredientNameSample = ''
+    pause()
+  })
+  ingredientNameInput?.addEventListener('blur', () => {
+    getRandomIngredient()
+    resume()
+  })
+})
 
 function writeWords(word) {
   ingredientNameSample = ''
@@ -23,8 +43,14 @@ function writeWords(word) {
   }, 600 / parts.length)
 }
 
-const user = useUserStore()
-const name = ref(user.savedName)
+function searchIngredient(value) {
+  if (value.length < 3)
+    return
+  const ingredient = ingredientsList.find(i => i.object_name === value)
+  if (!ingredient)
+    return
+  router.push({ name: 'ingredient', params: { id: ingredient.id } })
+}
 
 const router = useRouter()
 
@@ -34,7 +60,7 @@ const ingredientName = $ref('')
 
 <template>
   <div>
-    <div w-full bg="red dark:#2e0505" text-4xl flex="~">
+    <div w-full bg="red dark:#5a0909" text-4xl flex="~">
       <div w="1/2">
         <embed src="blank_sandwich.svg" w="full">
       </div>
@@ -44,7 +70,7 @@ const ingredientName = $ref('')
             What ingredient is in your kitchen?
           </div>
           <input
-            id="input"
+            id="input" ref="ingredientNameInput"
             v-model="ingredientName"
             type="text"
             p="x-4 y-2"
@@ -54,12 +80,13 @@ const ingredientName = $ref('')
             border="~ rounded gray-200 dark:gray-700"
             outline="none active:none"
             :placeholder="ingredientNameSample"
+            @input="searchIngredient"
           >
         </div>
         <div />
       </div>
     </div>
-    <div text="black dark:white" p="t-2">
+    <div text="black dark:gray-400" p="t-2">
       <p>
         <a rel="noreferrer" href="" target="_blank">
           Make me A Sweet Sandwich

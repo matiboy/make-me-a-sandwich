@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "object_name": "Bacon, Egg and Banana Sandwich",
+    "publish_date": "2023-06-07",
+    "source": 1,
+    "ingredients": [
+      {"id": 16, "quantity": "", "specific": "crumbled bacon"},
+      {"id": 8, "specific": "mashed egg yolk"},
+      {"id": 30}
+    ],
+    "score": 6.5,
+    "plus_up_score": 7,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 14, "quantity": "", "specific": ""}
+    ]
+  },
+  {
+    "id": 2,
+    "object_name": "Egg & Bacon Sandwich",
+    "publish_date": "2022-12-17",
+    "source": 1,
+    "ingredients": [
+      {"id": 16, "quantity": "", "specific": "crumbled bacon"},
+      {"id": 8, "specific": "hard mashed egg yolk"},
+      {"id": 21},
+      {"id": 40}
+    ],
+    "score": 7.5,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 46}
+    ]
+  },
+  {
+    "id": 3,
+    "object_name": "Bacon & Pickle Sandwich",
+    "publish_date": "2022-07-14",
+    "source": 1,
+    "ingredients": [
+      {"id": 16, "specific": "crumbled bacon"},
+      {"id": 4},
+      {"id": 17}
+    ],
+    "score": 7,
+    "plus_up_score": 8,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 14}
+    ]
+  }
+]
