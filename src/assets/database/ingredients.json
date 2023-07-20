@@ -228,5 +228,14 @@
       "id": 46,
       "object_name": "everything but the bagel",
       "category": "Condiment"
+    },
+    {
+      "id": 47,
+      "object_name": "salt",
+      "category": "Condiment"
+    },
+    {
+      "id": 48,
+      "object_name": "pepper"
     }
   ]

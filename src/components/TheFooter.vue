@@ -9,7 +9,10 @@ const { t, locale } = useI18n()
       Every sandwich has a direct link (not embedded) to his corresponding YouTube video. If you identify a missing or broken link please report it, thanks.
     </p>
     <div>
-      <RouterLink icon-btn to="/" :title="t('button.home')">
+      <RouterLink icon-btn to="/" title="Home">
+        <div i-carbon-home />
+      </RouterLink>
+      <RouterLink icon-btn to="/about" :title="t('button.home')">
         <div i-carbon-at />
       </RouterLink>
 
