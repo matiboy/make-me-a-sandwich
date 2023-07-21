@@ -1,5 +1,40 @@
 [
     {
+      "id": 78,
+      "object_name": "potato chips",
+      "category": "Condiment"
+    },
+    {
+      "id": 77,
+      "object_name": "old bay seasoning",
+      "category": "Spice"
+    },
+    {
+      "id": 76,
+      "object_name": "worcestershire sauce",
+      "category": "Sauce"
+    },
+    {
+      "id": 75,
+      "object_name": "chives",
+      "category": "Vegetable"
+    },
+    {
+      "id": 74,
+      "object_name": "celery",
+      "category": "Vegetable"
+    },
+    {
+      "id": 73,
+      "object_name": "peanuts",
+      "category": "Seed"
+    },
+    {
+      "id": 72,
+      "object_name": "cilantro",
+      "category": "Herb"
+    },
+    {
       "id": 71,
       "object_name": "milk",
       "category": "Cheese"

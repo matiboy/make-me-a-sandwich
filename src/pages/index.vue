@@ -20,7 +20,7 @@ function findRecipe(ingredientId: number, returnExists = false) {
 
 const realIngredientsList = ingredientsList.filter(i => !!(findRecipe(i.id, true)))
 
-const ingredientNameSamples: string[] = ingredientsList.reduce((acc, i) => i.object_name.length < 10 ? [...acc, i.object_name] : acc, [])
+const ingredientNameSamples: string[] = realIngredientsList.reduce((acc, i) => i.object_name.length < 10 ? [...acc, i.object_name] : acc, [])
 const ingredientNameSamplesCopy = [...ingredientNameSamples]
 function getRandomIngredient() {
   if (!ingredientNameSamplesCopy.length)

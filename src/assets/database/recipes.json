@@ -1,5 +1,73 @@
 [
   {
+    "id": 15,
+    "object_name": "The Sara E. Porter Special (1974)",
+    "publish_date": "2022-11-22",
+    "source": 1,
+    "ingredients": [
+      {"id": 15, "specific": "canned"},
+      {"id": 56, "specific": "sweet"},
+      {"id": 74},
+      {"id": 78},
+      {"id": 3},
+      {"id": 17},
+      {"id": 48},
+      {"id": 71},
+      {"id": 8},
+      {"id": 6},
+      {"id": 63},
+      {"id": 47}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=Vh51yZ4XbrQ",
+    "score": 8,
+    "plus_up_score": 9,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+    ]
+  },
+  {
+    "id": 14,
+    "object_name": "Protein Sandwich (1974)",
+    "publish_date": "2022-10-16",
+    "source": 1,
+    "ingredients": [
+      {"id": 14},
+      {"id": 8},
+      {"id": 73},
+      {"id": 76},
+      {"id": 17},
+      {"id": 75},
+      {"id": 74}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=kK8QJlnSOXI",
+    "score": 5,
+    "plus_up_score": 7,
+    "bread_type": "wholewheat",
+    "plus_up_ingredients": [
+      {"id": 51},
+      {"id": 21}
+    ]
+  },
+  {
+    "id": 13,
+    "object_name": "Peanut Butter, Tuna, and Onion Sandwich",
+    "publish_date": "2023-07-06",
+    "source": 1,
+    "ingredients": [
+      {"id": 14},
+      {"id": 11},
+      {"id": 3}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=wYh1mCiuOZ8",
+    "score": 3.5,
+    "plus_up_score": 7,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 51, "specific": "Sriracha"},
+      {"id": 72}
+    ]
+  },
+  {
     "id": 12,
     "object_name": "Croque Monsieur (1910)",
     "publish_date": "2022-07-27",
@@ -132,8 +200,8 @@
     "publish_date": "2023-06-07",
     "source": 1,
     "ingredients": [
-      {"id": 16, "quantity": "", "specific": "crumbled bacon"},
-      {"id": 8, "specific": "mashed egg yolk"},
+      {"id": 16, "quantity": ""},
+      {"id": 8},
       {"id": 30}
     ],
     "video_url": "https://www.youtube.com/watch?v=lCf62fSaOK8",
