@@ -11,6 +11,9 @@ const ingredientsList: Ingredient[] = ingredientsListU
 const recipesList: Recipe[] = recipesListU
 
 let ingredientNameSample = $ref('')
+let ingredientName = $ref('')
+const selectedIngredients = $ref<Ingredient[]>([])
+let availableIngredients: Ingredient[] = $ref([])
 
 function findRecipe(ingredientId: number, returnExists = false) {
   return recipesList[returnExists ? 'find' : 'filter'](
@@ -20,7 +23,7 @@ function findRecipe(ingredientId: number, returnExists = false) {
 
 const realIngredientsList = ingredientsList.filter(i => !!(findRecipe(i.id, true)))
 
-const ingredientNameSamples: string[] = realIngredientsList.reduce((acc, i) => i.object_name.length < 10 ? [...acc, i.object_name] : acc, [])
+const ingredientNameSamples: string[] = realIngredientsList.reduce((acc, i) => i.object_name.length < 10 ? [...acc, i.object_name] : acc, [] as string[])
 const ingredientNameSamplesCopy = [...ingredientNameSamples]
 function getRandomIngredient() {
   if (!ingredientNameSamplesCopy.length)
@@ -29,10 +32,10 @@ function getRandomIngredient() {
   writeWords(ingredientNameSamplesCopy.splice(i, 1)[0])
 }
 setTimeout(getRandomIngredient, 300)
-const { pause, resume, isActive } = useIntervalFn(getRandomIngredient, 3e3)
+const { pause, resume } = useIntervalFn(getRandomIngredient, 3e3)
 
-const ingredientNameInput = $ref<HTMLElement | null>(null)
-const mySandwich = $ref<SVGElement | null>(null)
+const ingredientNameInput = $ref<HTMLInputElement | null>(null)
+const mySandwich = $ref<HTMLEmbedElement | null>(null)
 const elements = [
   ['darkSide', 'step1Text'],
   ['lightSide', 'step2Text'],
@@ -54,6 +57,8 @@ onMounted(() => {
 })
 watch(() => mySandwich, (s) => {
   // Not sure why, getting null on load if too quick
+  if (!s)
+    return
   setTimeout(() => {
     const doc = s.getSVGDocument()
     for (const i in elements) {
@@ -80,12 +85,11 @@ function writeWords(word: string) {
   }, 600 / parts.length)
 }
 
-const selectedIngredients = $ref<Ingredient[]>([])
 const availableRecipes = $computed(() => {
   if (!selectedIngredients.length)
     return []
   return selectedIngredients.reduce((acc, i) => {
-    const thisIngredientRecipes = findRecipe(i.id)
+    const thisIngredientRecipes = findRecipe(i.id) as Recipe[]
     return acc.filter(r => thisIngredientRecipes.includes(r))
   }, [...recipesList])
 })
@@ -102,9 +106,8 @@ function selectIngredient(ingredient: Ingredient) {
   resume()
 }
 
-let availableIngredients: Ingredient[] = $ref([])
-function searchIngredient(evt, isEnter = false) {
-  const value = evt.target.value
+function searchIngredient(evt: InputEvent, isEnter = false) {
+  const value = (evt.target as HTMLInputElement).value.toLowerCase()
   if (!value)
     ingredientNameSample = ''
 
@@ -114,17 +117,25 @@ function searchIngredient(evt, isEnter = false) {
   }
   // Exact match
   const ingredients: Ingredient[] = []
+  const exact = realIngredientsList.find(i => i.object_name === value)
+  if (exact)
+    ingredients.push(exact)
   // Start with
-  ingredients.push(...realIngredientsList.filter(i => !ingredients.includes(i) && i.object_name.startsWith(value)))
+  for (const i of realIngredientsList) {
+    if (!ingredients.includes(i) && i.object_name.startsWith(value))
+      ingredients.push(i)
+  }
   // Contains
-  ingredients.push(...realIngredientsList.filter(i => !ingredients.includes(i) && i.object_name.includes(value)))
+  for (const i of realIngredientsList) {
+    if (!ingredients.includes(i) && i.object_name.includes(value))
+      ingredients.push(i)
+  }
   availableIngredients = ingredients.filter(i => !selectedIngredients.includes(i))
   if (isEnter && availableIngredients.length)
     selectIngredient(availableIngredients[0])
 }
 
 const { t } = useI18n()
-let ingredientName = $ref('')
 let oneRecipe = $ref<Recipe | null>(null)
 
 function findIngredientFromRecipeIngredient(ingredient: RecipeIngredient): Ingredient {
@@ -132,14 +143,14 @@ function findIngredientFromRecipeIngredient(ingredient: RecipeIngredient): Ingre
 }
 
 watch(() => selectedIngredients.length + (!!oneRecipe).toString(), (v) => {
-  const mySandwichSVG = mySandwich.getSVGDocument()
+  const mySandwichSVG = mySandwich!.getSVGDocument()
   const elementsCopy = [...elements]
   if (oneRecipe) {
     for (const i in elements) {
       const [side, textBox] = elements[i]
-      mySandwichSVG.getElementById(side).setAttribute('opacity', 1)
+      mySandwichSVG!.getElementById(side)!.setAttribute('opacity', '1')
       if (oneRecipe.ingredients[i])
-        mySandwichSVG.getElementById(textBox).textContent = findIngredientFromRecipeIngredient(oneRecipe.ingredients[i]).object_name
+        mySandwichSVG!.getElementById(textBox)!.textContent = findIngredientFromRecipeIngredient(oneRecipe.ingredients[i]).object_name
     }
     return
   }
