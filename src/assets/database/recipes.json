@@ -233,16 +233,17 @@
   },
   {
     "id": 2,
-    "object_name": "Egg & Bacon Sandwich",
+    "object_name": "Egg & Bacon Sandwich (1917)",
     "publish_date": "2022-12-17",
     "source": 1,
     "ingredients": [
-      {"id": 16, "quantity": "", "specific": "crumbled bacon"},
-      {"id": 8, "specific": "hard mashed egg yolk"},
+      {"id": 16},
+      {"id": 8},
       {"id": 21},
       {"id": 40}
     ],
     "score": 7.5,
+    "video_url": "https://www.youtube.com/watch?v=oXtzJyNV44s",
     "plus_up_score": 8,
     "bread_type": "white",
     "plus_up_ingredients": [
@@ -251,8 +252,9 @@
   },
   {
     "id": 3,
-    "object_name": "Bacon & Pickle Sandwich",
+    "object_name": "Bacon & Pickle Sandwich (1941)",
     "publish_date": "2022-07-14",
+    "video_url": "https://www.youtube.com/watch?v=sMnl4rsj0-0",
     "source": 1,
     "ingredients": [
       {"id": 16, "specific": "crumbled bacon"},
