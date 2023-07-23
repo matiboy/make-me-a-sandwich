@@ -1,5 +1,27 @@
 [
   {
+    "id": 17,
+    "object_name": "Ham and Egg Sandwich (1936)",
+    "publish_date": "2022-07-01",
+    "source": 1,
+    "ingredients": [
+      {"id": 23},
+      {"id": 8},
+      {"id": 3},
+      {"id": 48},
+      {"id": 47},
+      {"id": 40}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=mB4q9ake1l4",
+    "score": 7,
+    "plus_up_score": 8.5,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 31},
+      {"id": 36}
+    ]
+  },
+  {
     "id": 16,
     "object_name": "Gruyere Sandwich (1893)",
     "publish_date": "2022-11-22",
