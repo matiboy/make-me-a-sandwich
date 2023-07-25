@@ -1,5 +1,25 @@
 [
   {
+    "id": 19,
+    "object_name": "Olive and Anchovy Sandwich (1896)",
+    "publish_date": "2023-01-24",
+    "source": 1,
+    "ingredients": [
+      {"id": 58},
+      {"id": 55},
+      {"id": 80},
+      {"id": 40}
+    ],
+    "video_url": "https://www.youtube.com/watch?v=DrM9kJsG8Zk",
+    "score": 6,
+    "plus_up_score": 7,
+    "bread_type": "white",
+    "plus_up_ingredients": [
+      {"id": 26},
+      {"id": 43}
+    ]
+  },
+  {
     "id": 18,
     "object_name": "Cottage Cheese and Egg Sandwich (1941)",
     "publish_date": "2022-09-22",
