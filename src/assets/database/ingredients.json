@@ -1,5 +1,10 @@
 [
     {
+      "id": 80,
+      "object_name": "cayenne pepper",
+      "category": "Pepper"
+    },
+    {
       "id": 79,
       "object_name": "cottage cheese",
       "category": "Cheese"
