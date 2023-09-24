@@ -235,7 +235,7 @@ const randomRecipes = $computed(() => {
       <div v-show="!oneRecipe" flex="~ col justify-start items-center" h="full">
         <div h="1/2" w="full" flex="~ col justify-end items-center" gap="3" relative>
           <div text="white dark:gray-400 3xl">
-            What ingredient is in your kitchen?
+            What ingredient have you got?
           </div>
           <input
             id="input" ref="ingredientNameInput"

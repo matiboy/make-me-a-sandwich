@@ -1,3 +1,12 @@
 <template>
-  <embed src="/logo.svg" class="logo">
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+    <path fill="#FF8000" d="M0 0h120v120H0z" />
+    <path id="#left-rectangle" d="m20 80 40 20V60L20 40Z" fill="#6A462F" />
+    <path d="M60,60 v40 l40,-20 v-40Z" fill="#C4A484" />
+    <path d="M60 60 20 40h80" fill="#D7BF82" />
+    <path d="M20 40v40m80-40v40" />
+    <circle cx="60" cy="33" r="6" fill="#8CC63F" />
+    <circle cx="62" cy="32" r="2" fill="red" />
+    <path stroke="#000" d="M60 39v11m0-27v4" />
+  </svg>
 </template>
